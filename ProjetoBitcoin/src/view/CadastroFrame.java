@@ -4,17 +4,145 @@
  */
 package view;
 
+import controller.ControllerCadastro;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+
 /**
  *
  * @author admin
  */
 public class CadastroFrame extends javax.swing.JFrame {
 
-    /**
-     * Creates new form CadastroFrame
-     */
+    
     public CadastroFrame() {
         initComponents();
+        c = new ControllerCadastro();
+    }
+
+    public JButton getBtcadastro() {
+        return btcadastro;
+    }
+
+    public void setBtcadastro(JButton btcadastro) {
+        this.btcadastro = btcadastro;
+    }
+
+    public JPasswordField getCadastrosenha() {
+        return cadastrosenha;
+    }
+
+    public void setCadastrosenha(JPasswordField cadastrosenha) {
+        this.cadastrosenha = cadastrosenha;
+    }
+
+    public JPasswordField getCadastrosenhaconfirm() {
+        return cadastrosenhaconfirm;
+    }
+
+    public void setCadastrosenhaconfirm(JPasswordField cadastrosenhaconfirm) {
+        this.cadastrosenhaconfirm = cadastrosenhaconfirm;
+    }
+
+    public JLabel getjLabel1() {
+        return jLabel1;
+    }
+
+    public void setjLabel1(JLabel jLabel1) {
+        this.jLabel1 = jLabel1;
+    }
+
+    public JLabel getjLabel3() {
+        return jLabel3;
+    }
+
+    public void setjLabel3(JLabel jLabel3) {
+        this.jLabel3 = jLabel3;
+    }
+
+    public JLabel getjLabel4() {
+        return jLabel4;
+    }
+
+    public void setjLabel4(JLabel jLabel4) {
+        this.jLabel4 = jLabel4;
+    }
+
+    public JLabel getjLabel5() {
+        return jLabel5;
+    }
+
+    public void setjLabel5(JLabel jLabel5) {
+        this.jLabel5 = jLabel5;
+    }
+
+    public JLabel getjLabel6() {
+        return jLabel6;
+    }
+
+    public void setjLabel6(JLabel jLabel6) {
+        this.jLabel6 = jLabel6;
+    }
+
+    public JLabel getjLabel7() {
+        return jLabel7;
+    }
+
+    public void setjLabel7(JLabel jLabel7) {
+        this.jLabel7 = jLabel7;
+    }
+
+    public JMenu getjMenu1() {
+        return jMenu1;
+    }
+
+    public void setjMenu1(JMenu jMenu1) {
+        this.jMenu1 = jMenu1;
+    }
+
+    public JMenuBar getjMenuBar1() {
+        return jMenuBar1;
+    }
+
+    public void setjMenuBar1(JMenuBar jMenuBar1) {
+        this.jMenuBar1 = jMenuBar1;
+    }
+
+    public JMenuItem getjMenuItem1() {
+        return jMenuItem1;
+    }
+
+    public void setjMenuItem1(JMenuItem jMenuItem1) {
+        this.jMenuItem1 = jMenuItem1;
+    }
+
+    public JTextField getTxtcadastrocpf() {
+        return txtcadastrocpf;
+    }
+
+    public void setTxtcadastrocpf(JTextField txtcadastrocpf) {
+        this.txtcadastrocpf = txtcadastrocpf;
+    }
+
+    public JTextField getTxtcadastroemail() {
+        return txtcadastroemail;
+    }
+
+    public void setTxtcadastroemail(JTextField txtcadastroemail) {
+        this.txtcadastroemail = txtcadastroemail;
+    }
+
+    public JTextField getTxtcadastronome() {
+        return txtcadastronome;
+    }
+
+    public void setTxtcadastronome(JTextField txtcadastronome) {
+        this.txtcadastronome = txtcadastronome;
     }
 
     /**
@@ -37,6 +165,7 @@ public class CadastroFrame extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+        btcadastro = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -86,6 +215,15 @@ public class CadastroFrame extends javax.swing.JFrame {
         jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("Nome");
 
+        btcadastro.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btcadastro.setForeground(new java.awt.Color(0, 0, 0));
+        btcadastro.setText("Cadastrar");
+        btcadastro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btcadastroActionPerformed(evt);
+            }
+        });
+
         jMenu1.setBackground(new java.awt.Color(0, 0, 0));
         jMenu1.setForeground(new java.awt.Color(0, 0, 0));
         jMenu1.setText("Menu");
@@ -93,6 +231,11 @@ public class CadastroFrame extends javax.swing.JFrame {
         jMenuItem1.setBackground(new java.awt.Color(0, 0, 0));
         jMenuItem1.setForeground(new java.awt.Color(0, 0, 0));
         jMenuItem1.setText("Login");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem1);
 
         jMenuBar1.add(jMenu1);
@@ -124,13 +267,17 @@ public class CadastroFrame extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(47, 47, 47))))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(141, 141, 141)
+                .addComponent(btcadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(12, 12, 12)
+                .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(txtcadastronome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -145,16 +292,26 @@ public class CadastroFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(cadastrosenha, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(cadastrosenhaconfirm, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(49, 49, 49))
+                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(btcadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        this.setVisible(false);
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void btcadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btcadastroActionPerformed
+        c.SalvarUsuario();
+    }//GEN-LAST:event_btcadastroActionPerformed
 
     /**
      * @param args the command line arguments
@@ -191,7 +348,10 @@ public class CadastroFrame extends javax.swing.JFrame {
 //        });
 //    }
 
+    private ControllerCadastro c;
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btcadastro;
     private javax.swing.JPasswordField cadastrosenha;
     private javax.swing.JPasswordField cadastrosenhaconfirm;
     private javax.swing.JLabel jLabel1;

@@ -30,12 +30,14 @@ public class LoginDAO {
         return resultado;
     }
     
-    public void inserir(Menu usuarios) throws SQLException{
-        String sql = "insert into aluno(nome, usuario, senha) values('"
+    public void inserir(Login usuarios) throws SQLException{
+        String sql = "insert into usuarios(nome, cpf, senha) values('"
                 + usuarios.getNome() + "', '" + usuarios.getCpf() + "', '"
                 + usuarios.getSenha() + "') ";
         PreparedStatement statement = conn.prepareStatement(sql);
         statement.execute();
         conn.close();
     }
+    
+
 }
