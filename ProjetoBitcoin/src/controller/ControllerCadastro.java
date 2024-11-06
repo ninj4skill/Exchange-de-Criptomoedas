@@ -14,7 +14,7 @@ public class ControllerCadastro {
     
     private CadastroFrame view;
     
-    public ControllerCadastro (){
+    public ControllerCadastro (CadastroFrame view){
         this.view = view;
     }
    
@@ -22,10 +22,19 @@ public class ControllerCadastro {
         String nome = view.getTxtcadastronome().getText();
         String cpf = view.getTxtcadastrocpf().getText();
         String senha = view.getCadastrosenha().getText();
+        Login cadastro = new Login(nome, cpf, senha);
+        Conexao conn = new Conexao();
         
-        Login cadastro = new Login (nome, cpf, senha);
-        
-        Conexao conexao = new Conexao();
+       try{
+           Connection connection = conn.getConnection();
+           LoginDAO dao = new LoginDAO(connection);
+           dao.inserir(cadastro);
+           JOptionPane.showMessageDialog(view, "Usuário Cadastrado com Sucesso", "Cadastrado!", JOptionPane.INFORMATION_MESSAGE);
+       }
+       catch(SQLException e){
+           JOptionPane.showMessageDialog(view, "Falha no Cadastro.", "Erro!", JOptionPane.ERROR_MESSAGE);
+           e.printStackTrace();
+       }
     }
 }
 

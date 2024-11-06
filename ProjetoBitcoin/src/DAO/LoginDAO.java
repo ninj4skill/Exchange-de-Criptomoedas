@@ -5,7 +5,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.PreparedStatement;
 import model.Login;
-import view.Menu;
 
 public class LoginDAO {
     private Connection conn;

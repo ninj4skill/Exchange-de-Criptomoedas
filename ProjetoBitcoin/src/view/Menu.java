@@ -67,6 +67,11 @@ public class Menu extends javax.swing.JFrame {
 
         jButton2.setText("Depositar");
         jButton2.setPreferredSize(new java.awt.Dimension(120, 40));
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("Sacar");
         jButton3.setPreferredSize(new java.awt.Dimension(120, 40));
@@ -150,6 +155,10 @@ public class Menu extends javax.swing.JFrame {
         ConSaldoFrame csf = new ConSaldoFrame();
         csf.setVisible(true);
     }//GEN-LAST:event_btconsaldoActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+       
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
