@@ -3,7 +3,6 @@ package controller;
 
 import DAO.LoginDAO;
 import DAO.Conexao;
-import model.Cadastro;
 import view.CadastroFrame;
 import java.sql.Connection;
 import java.sql.SQLException;

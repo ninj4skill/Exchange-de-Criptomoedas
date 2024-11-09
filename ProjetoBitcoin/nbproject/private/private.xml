@@ -5,14 +5,14 @@
         <group>
             <file>file:/C:/Users/admin/Documents/NetBeansProjects/ProjetoBitcoin/src/view/Menu.java</file>
             <file>file:/C:/Users/admin/Documents/NetBeansProjects/ProjetoBitcoin/src/model/Login.java</file>
-            <file>file:/C:/Users/admin/Documents/NetBeansProjects/ProjetoBitcoin/src/controller/ControllerCadastro.java</file>
-            <file>file:/C:/Users/admin/Documents/NetBeansProjects/ProjetoBitcoin/src/view/DepositoFrame.java</file>
-            <file>file:/C:/Users/admin/Documents/NetBeansProjects/ProjetoBitcoin/src/view/SaqueFrame.java</file>
+            <file>file:/C:/Users/admin/Documents/NetBeansProjects/ProjetoBitcoin/src/model/Saldo.java</file>
+            <file>file:/C:/Users/admin/Documents/NetBeansProjects/ProjetoBitcoin/src/view/ConSaldoSenha.java</file>
             <file>file:/C:/Users/admin/Documents/NetBeansProjects/ProjetoBitcoin/src/view/LoginFrame.java</file>
-            <file>file:/C:/Users/admin/Documents/NetBeansProjects/ProjetoBitcoin/src/DAO/Conexao.java</file>
             <file>file:/C:/Users/admin/Documents/NetBeansProjects/ProjetoBitcoin/src/DAO/LoginDAO.java</file>
+            <file>file:/C:/Users/admin/Documents/NetBeansProjects/ProjetoBitcoin/src/controller/ControllerSaldo.java</file>
             <file>file:/C:/Users/admin/Documents/NetBeansProjects/ProjetoBitcoin/src/controller/ControllerLogin.java</file>
-            <file>file:/C:/Users/admin/Documents/NetBeansProjects/ProjetoBitcoin/src/view/CadastroFrame.java</file>
+            <file>file:/C:/Users/admin/Documents/NetBeansProjects/ProjetoBitcoin/src/view/ConSaldoFrame.java</file>
+            <file>file:/C:/Users/admin/Documents/NetBeansProjects/ProjetoBitcoin/src/DAO/SaldoDAO.java</file>
         </group>
     </open-files>
 </project-private>
