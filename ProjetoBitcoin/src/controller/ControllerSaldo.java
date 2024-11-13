@@ -7,27 +7,35 @@ import java.sql.ResultSet;
 import javax.swing.JOptionPane;
 import java.sql.SQLException;
 import model.Saldo;
-import view.ConSaldoFrame;
 import view.ConSaldoSenha;
-import controller.ControllerLogin;
+import DAO.LoginDAO;
+import model.Login;
 
 public class ControllerSaldo {
     
     private ConSaldoSenha view;
-    private String CpfLogin;
+   // private ConSaldoFrame view2;
+    private static String CpfLogin;
     
-    public ControllerSaldo(ConSaldoSenha view, String CpfLogin){
+    public ControllerSaldo(ConSaldoSenha view){
         this.view = view;
-        String cpfLogado = null;
+       // this.view2 = new ConSaldoFrame();
         
     }
+
+    public static String getCpfLogin() {
+        return CpfLogin;
+    }
+
+    public static void setCpfLogin(String CpfLogin) {
+        ControllerSaldo.CpfLogin = CpfLogin;
+    }
+     
+        
     
-    public ControllerSaldo(){
-        
-    }
     
     public void Saldo(){
-        Saldo sf = new Saldo(view.getTxtsenhasaldo().getText(), cpfLogado);
+        Saldo sf = new Saldo(CpfLogin, view.getTxtsenhasaldo().getText());
         
         Conexao conexao = new Conexao();
         try{
@@ -38,12 +46,20 @@ public class ControllerSaldo {
         if (res.next()){
                 JOptionPane.showMessageDialog(view, "Saldo Acessado", "Aviso",
                         JOptionPane.INFORMATION_MESSAGE);
-                String cpf = res.getString("cpf");
+                
                 String senha = res.getString("senha");
-                Saldo sf1 = new Saldo(cpf, senha);
-                ConSaldoFrame csf = new ConSaldoFrame();
-                csf.setVisible(true);
-                view.setVisible(false);
+                String nome = res.getString("nome");
+                Saldo sf1 = new Saldo(CpfLogin, senha);
+               
+                res = dao.consultarsaldo(sf1);
+                if(res.next()){
+                    double saldo = res.getDouble("saldo");
+                    double saldobtc = res.getDouble("saldobtc");
+                    double saldoeth = res.getDouble("saldoeth");
+                    double saldoxrp = res.getDouble("saldoxrp");
+                    view.getTxtsaldo().setText("Nome: " + nome + "\nCPF: " + CpfLogin + "\nReal: " + saldo + " \nBtc: " + saldobtc + " \nEth: " + saldoeth + "\nXrp: " + saldoxrp);
+
+                }
                 
         }else{
             JOptionPane.showMessageDialog(view, "Saldo não acessado", "Erro",

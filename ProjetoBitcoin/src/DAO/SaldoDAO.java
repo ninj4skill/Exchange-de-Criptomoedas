@@ -15,12 +15,7 @@ public class SaldoDAO {
     }
     
     public ResultSet consultar(Saldo usuarios) throws SQLException{
-        //esse código fica vulnerável pipipi :(
-        //String sql = "select * from aluno where usuario = '"
-        //        + aluno.getUsuario() + "' AND senha = '" + aluno.getSenha() 
-        //        + "'";
         
-        //String sql = "select * from aluno where usuario = ? AND senha = ?";
         String sql = "select * from usuarios where cpf = ? AND senha = ?";
         PreparedStatement statement = conn.prepareStatement(sql);
         statement.setString(1, usuarios.getCpf());
@@ -28,6 +23,20 @@ public class SaldoDAO {
         statement.execute();
         ResultSet resultado = statement.getResultSet();
         return resultado;
+        
+    }
+    
+    public ResultSet consultarsaldo(Saldo usuarios) throws SQLException{
+        
+        String sql = "select * from carteira where senha = ?";
+        PreparedStatement statement = conn.prepareStatement(sql);
+        statement.setString(1, usuarios.getSenha());
+        statement.execute();
+        ResultSet resultado = statement.getResultSet();
+        return resultado;
+        
     }
     
 }
+
+
